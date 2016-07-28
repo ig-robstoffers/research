@@ -43,7 +43,7 @@ namespace WritingFloatsToBitmap
                 var posX = points[i].X;
                 var posY = points[i].Y;
 
-                var pos = (int)(b.PixelWidth * posX + posY);
+                var pos = (int)(posY * b.PixelWidth + posX);
                 values[pos] = 1;
 
                 Array.Copy(BitConverter.GetBytes((float)values[pos]), 0, pixels, pos * 16, 4);
