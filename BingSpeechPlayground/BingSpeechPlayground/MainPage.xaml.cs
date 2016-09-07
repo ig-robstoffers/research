@@ -43,8 +43,8 @@ namespace BingSpeechPlayground
         Windows.Storage.Streams.InMemoryRandomAccessStream _stream;
         MediaEncodingProfile profile;
 
-        private const string TRANSLATE_API_KEY = "<YOUR_API_KEY>";
-        private const string BING_CLIENT_SECRET = "<YOUR_CLIENT_SECRET>";
+        private const string TRANSLATE_API_KEY = "AIzaSyAW2-dBW6q0VdF5IENPVk9tZZK1zyXygB8";
+        private const string BING_CLIENT_SECRET = "53abb2eaeb2544cc84a8fdd070c8aacc";
 
         public MainPage()
         {
@@ -152,7 +152,7 @@ namespace BingSpeechPlayground
                     googleTranslateRequestUri += @"?key=" + TRANSLATE_API_KEY;
                     googleTranslateRequestUri += @"&q=" + recognition.results[0].lexical.Replace(" ", "%20");
                     googleTranslateRequestUri += @"&source=en";
-                    googleTranslateRequestUri += @"&target=es";
+                    googleTranslateRequestUri += @"&target=ja";
 
                     HttpWebRequest googleTranslateRequest = HttpWebRequest.CreateHttp(googleTranslateRequestUri);
                     googleTranslateRequest.Method = "GET";
@@ -174,7 +174,7 @@ namespace BingSpeechPlayground
                     googleRequestUri += @"&client=tw-ob";
                     
                     googleRequestUri += @"&q=" + translate.data.translations[0].translatedText.Replace(" ", "%20");
-                    googleRequestUri += @"&tl=es";
+                    googleRequestUri += @"&tl=ja";
 
                     HttpWebRequest googleRequest = (HttpWebRequest)HttpWebRequest.CreateHttp(googleRequestUri);
                     googleRequest.Headers[HttpRequestHeader.UserAgent] = "Mozilla/5.0 (X11; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0";
